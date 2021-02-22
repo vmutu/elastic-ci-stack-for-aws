@@ -7,7 +7,7 @@ PACKER_VERSION ?= 1.6.2
 PACKER_LINUX_FILES = $(exec find packer/linux)
 PACKER_WINDOWS_FILES = $(exec find packer/windows)
 
-AWS_REGION ?= us-east-1
+AWS_REGION ?= us-west-1
 AMZN_LINUX2_AMI ?= $(shell aws ec2 describe-images --region $(AWS_REGION) --owners amazon --filters 'Name=name,Values=amzn2-ami-hvm-2.0.????????-x86_64-gp2' 'Name=state,Values=available' --output json | jq -r '.Images | sort_by(.CreationDate) | last(.[]).ImageId')
 
 ARM64_INSTANCE_TYPE = m6g.xlarge
