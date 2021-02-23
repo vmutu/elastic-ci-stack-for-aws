@@ -15,6 +15,9 @@ sudo pip3 install future
 echo "Installing zip utils..."
 sudo apt-get install -y zip unzip git pigz
 
+echo "Installing misc utils..."
+sudo apt-get install -y libyaml-dev
+
 echo "Installing bk elastic stack bin files..."
 sudo chmod +x /tmp/conf/bin/bk-*
 sudo mv /tmp/conf/bin/bk-* /usr/local/bin

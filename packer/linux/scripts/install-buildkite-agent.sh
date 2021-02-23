@@ -12,8 +12,7 @@ case "${MACHINE}" in
 esac
 
 echo "Installing dependencies..."
-sudo yum update -y -q
-sudo yum install -y -q git-core
+sudo apt-get update -y
 
 echo "Creating buildkite-agent user and group..."
 sudo useradd --base-dir /var/lib --uid 2000 buildkite-agent
