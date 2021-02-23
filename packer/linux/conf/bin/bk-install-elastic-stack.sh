@@ -137,9 +137,9 @@ chown buildkite-agent: /etc/buildkite-agent/buildkite-agent.cfg
 if [[ -n "${BUILDKITE_AUTHORIZED_USERS_URL}" ]] ; then
 	cat <<- EOF > /etc/cron.hourly/authorized_keys
 	/usr/local/bin/bk-fetch.sh "${BUILDKITE_AUTHORIZED_USERS_URL}" /tmp/authorized_keys
-	mv /tmp/authorized_keys /home/ec2-user/.ssh/authorized_keys
-	chmod 600 /home/ec2-user/.ssh/authorized_keys
-	chown ec2-user: /home/ec2-user/.ssh/authorized_keys
+	mv /tmp/authorized_keys /home/ubuntu/.ssh/authorized_keys
+	chmod 600 /home/ubuntu/.ssh/authorized_keys
+	chown ubuntu: /home/ubuntu/.ssh/authorized_keys
 	EOF
 
 	chmod +x /etc/cron.hourly/authorized_keys
