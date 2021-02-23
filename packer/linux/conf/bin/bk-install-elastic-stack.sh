@@ -39,11 +39,11 @@ cwlogs = cwlogs
 region = $AWS_REGION
 EOF
 
-systemctl enable awslogsd.service
+systemctl enable awslogs
 
 # Start logging daemons as soon as possible to ensure failures in this script get sent
 systemctl restart rsyslog
-systemctl restart awslogsd
+systemctl restart awslogs
 
 PLUGINS_ENABLED=()
 [[ $SECRETS_PLUGIN_ENABLED == "true" ]] && PLUGINS_ENABLED+=("secrets")
