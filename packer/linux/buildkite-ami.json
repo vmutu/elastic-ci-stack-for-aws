@@ -71,6 +71,10 @@
     },
     {
       "type": "shell",
+      "script": "scripts/install-aws-tools.sh"
+    },
+    {
+      "type": "shell",
       "inline": [
         "rm /home/{{user `ssh_username`}}/.ssh/authorized_keys"
       ]

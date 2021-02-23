@@ -4,13 +4,14 @@ set -eu -o pipefail
 echo "Updating core packages"
 sudo apt-get update -y
 sudo apt-get upgrade -y
+sudo chown -R ubuntu:ubuntu /home/ubuntu
 
 echo "Updating awscli..."
-sudo apt-get install -y python-pip
-sudo apt-get install -y python3-pip python3 python3-setuptools
-sudo pip install --upgrade awscli
-sudo pip install future
-sudo pip3 install future
+sudo apt-get install -y python python-setuptools python-pip 
+sudo apt-get install -y python3 python3-setuptools python3-pip
+sudo sh -c "pip install --upgrade awscli"
+sudo sh -c "pip install future"
+sudo sh -c "pip3 install future"
 
 echo "Installing zip utils..."
 sudo apt-get install -y zip unzip git pigz
